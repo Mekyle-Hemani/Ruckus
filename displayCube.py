@@ -1,6 +1,8 @@
 import tkinter as tk
+import movements
+import time
 
-def displayCube(colorsinput):
+def displayCube(colorsinput, delay):
 
     color_options = ["white", "red", "green", "orange", "blue", "yellow"]
     colors = colorsinput
@@ -106,4 +108,4 @@ if __name__ == "__main__":
      5, 5, 5,
      5, 5, 5] #Yellow
     ]
-    print(displayCube(userscramble))
+    print(displayCube(userscramble, 1))
