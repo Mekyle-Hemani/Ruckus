@@ -37,7 +37,8 @@ def turn(notation, scramble):
         rotatefaceclockwise(notationbasic.index(notation))
 
         if (notation == "f"):
-            pass
+            temp = scramble.copy()
+            #Rotate all the relevant edge pieces
 
 
 def findpair(givenpair):
@@ -77,8 +78,6 @@ def rotatefaceclockwise(face):
     tempface[8] = face[2]
 
     return tempface
-
-print(rotatefaceclockwise([0, 1, 2, 3, 4, 5, 6, 7, 8]))
 
 '''
 for i in range(len(userturns)):
