@@ -1,31 +1,3 @@
-userturns = ["f", "r", "u"]
-
-userscramble = [
-    [0, 0, 0,
-     0, 0, 0,
-     0, 0, 0], #White
-     
-    [1, 1, 1,
-     1, 1, 1,
-     1, 1, 1], #Red
-
-    [2, 2, 2,
-     2, 2, 2,
-     2, 2, 2], #Green
-
-    [3, 3, 3,
-     3, 3, 3,
-     3, 3, 3], #Orange
-
-    [4, 4, 4,
-     4, 4, 4,
-     4, 4, 4], #Blue
-
-    [5, 5, 5,
-     5, 5, 5,
-     5, 5, 5] #Yellow
-]
-
 def turn(notation, scramble):
     if len(notation) == 2:
         for i in range(3):
@@ -79,6 +51,7 @@ def rotatefaceclockwise(face):
 
     return tempface
 
-'''
-for i in range(len(userturns)):
-    turn(userturns[i])'''
+if __name__ == "__main__":
+    #for i in range(len(userturns)):
+        #turn(userturns[i], userscramble)
+    pass

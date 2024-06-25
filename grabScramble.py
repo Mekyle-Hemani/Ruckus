@@ -78,7 +78,7 @@ def grabscramble():
         root.destroy()
 
     root = tk.Tk()
-    root.title("Ruckus")
+    root.title("Ruckus Scramble Input")
 
     color_options = ["red", "white", "blue", "green", "yellow", "orange"]
     colors = [
