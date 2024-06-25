@@ -2,9 +2,9 @@ import tkinter as tk
 import movements
 import time
 
-def displayCube(colorsinput, delay):
+def displayCube(colorsinput, delay=0):
 
-    color_options = ["white", "red", "green", "orange", "blue", "yellow"]
+    color_options = ["white", "red", "green", "orange", "blue", "yellow", "black"]
     colors = colorsinput
 
     for i in range(6):

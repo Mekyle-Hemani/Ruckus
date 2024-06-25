@@ -30,4 +30,8 @@ userscramble = [
      5, 5, 5] #Yellow
 ]
 
-userscramble = grabScramble.grabscramble()
+userscramble = movements.debugmode(userscramble, 1)
+
+displayCube.displayCube(userscramble)
+
+#userscramble = grabScramble.grabscramble()
