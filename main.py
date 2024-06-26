@@ -32,6 +32,6 @@ userscramble = [
 
 userscramble = movements.debugmode(userscramble, 1)
 
-displayCube.displayCube(userscramble)
+userscramble = movements.turn("f'", userscramble)
 
-#userscramble = grabScramble.grabscramble()
+displayCube.displayCube(userscramble)

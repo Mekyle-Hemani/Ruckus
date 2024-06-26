@@ -1,16 +1,26 @@
 def turn(notation, scramble):
     if len(notation) == 2:
+        editscramble = scramble
         for i in range(3):
-            turn(notation[0])
+            editscramble = turn(notation[0], scramble) #Needs to be set to a variable
+        return editscramble
     else:
         colours = ["w", "r", "g", "o", "b", "y"]
         notationbasic = ["f", "u", "r", "d", "l", "b"]
 
-        rotatefaceclockwise(notationbasic.index(notation))
+        scramble[notationbasic.index(notation)] = rotatefaceclockwise(scramble[notationbasic.index(notation)])
 
-        if (notation == "f"):
+        if ((notation == "f")):
             temp = scramble.copy()
-            #Rotate all the relevant edge pieces
+            #Rotate all the relevant pieces
+
+            finaltemp = (scramble[1][0], scramble[1][1], scramble[1][2])
+            (temp[1][0], temp[1][1], temp[1][2]) = (scramble[4][0], scramble[4][1], scramble[4][2])
+            (temp[4][0], temp[4][1], temp[4][2]) = (scramble[3][0], scramble[3][1], scramble[3][2])
+            (temp[3][0], temp[3][1], temp[3][2]) = (scramble[2][0], scramble[2][1], scramble[2][2])
+            (temp[2][0], temp[2][1], temp[2][2]) = finaltemp
+
+        return temp
 
 
 def findpair(givenpair):
@@ -52,6 +62,4 @@ def rotatefaceclockwise(face):
     return tempface
 
 if __name__ == "__main__":
-    #for i in range(len(userturns)):
-        #turn(userturns[i], userscramble)
     pass
