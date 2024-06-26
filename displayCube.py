@@ -71,7 +71,7 @@ def displayCube(colorsinput, delay=0):
 
     root.mainloop()
 
-    colours = ["white", "red", "green", "orange", "blue", "yellow"]
+    colours = ["white", "red", "green", "orange", "blue", "yellow", "black"]
 
     numberedscramble = scramble_result
 
