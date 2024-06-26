@@ -7,9 +7,11 @@ def displayCube(colorsinput, delay=0):
     color_options = ["white", "red", "green", "orange", "blue", "yellow", "black"]
     colors = colorsinput
 
-    for i in range(6):
-        for j in range(9):
-            colors[i][j] = color_options[colors[i][j]]
+    if isinstance(colors[0][0], int):
+
+        for i in range(6):
+            for j in range(9):
+                colors[i][j] = color_options[colors[i][j]]
 
     scramble_result = []
 

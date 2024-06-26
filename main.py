@@ -2,7 +2,8 @@ import grabScramble
 import displayCube
 import movements
 
-userturns = ["f", "r", "u"]
+#userturns = grabScramble.grabscramble()
+userturns = ["f", "r"]
 
 userscramble = [
     [0, 0, 0,
@@ -30,8 +31,8 @@ userscramble = [
      5, 5, 5] #Yellow
 ]
 
-userscramble = movements.debugmode(userscramble, 1)
+userscramble = movements.applySolve(userturns, userscramble)
 
-userscramble = movements.turn("f'", userscramble)
+print(userscramble)
 
 displayCube.displayCube(userscramble)
