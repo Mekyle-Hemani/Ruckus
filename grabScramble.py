@@ -101,7 +101,8 @@ def grabscramble():
 
     root.mainloop()
 
-    colours = ["white", "red", "green", "orange", "blue", "yellow"]
+    #colours = ["white", "red", "green", "orange", "blue", "yellow", "black"]
+    colours = ["white", "orange", "green", "red", "blue", "yellow", "black"]
 
     numberedscramble = scramble_result
 
