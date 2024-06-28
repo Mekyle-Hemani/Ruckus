@@ -3,7 +3,7 @@ import displayCube
 import movements
 
 #userturns = grabScramble.grabscramble()
-userturns = ["u", "r"]
+userturns = ["f", "r", "u"]
 
 userscramble = [
     [0, 0, 0,
