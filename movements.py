@@ -27,20 +27,39 @@ def turn(notation, scramble):
             [temp[2][0], temp[2][1], temp[2][2]] = finaltemp
         
         elif (notation == "u"):
-
             finaltemp = [scramble[0][0], scramble[0][1], scramble[0][2]]
-            [temp[0][0], temp[0][1], temp[0][2]] = [scramble[2][0], scramble[2][3], scramble[2][6]]
-            [temp[2][0], temp[2][3], temp[2][6]] = [scramble[5][6], scramble[5][7], scramble[5][8]]
-            [temp[5][6], temp[5][7], temp[5][8]] = [scramble[4][0], scramble[4][3], scramble[4][6]]
-            [temp[4][0], temp[4][3], temp[4][6]] = finaltemp
-
+            [temp[0][0], temp[0][1], temp[0][2]] = [scramble[2][0], scramble[2][1], scramble[2][2]]
+            [temp[2][0], temp[2][1], temp[2][2]] = [scramble[5][0], scramble[5][1], scramble[5][2]]
+            [temp[5][0], temp[5][1], temp[5][2]] = [scramble[4][0], scramble[4][1], scramble[4][2]]
+            [temp[4][0], temp[4][1], temp[4][2]] = finaltemp
+        
         elif (notation == "r"):
-
             finaltemp = [scramble[0][2], scramble[0][5], scramble[0][8]]
-            [temp[0][2], temp[0][5], temp[0][8]] = [scramble[3][0], scramble[3][3], scramble[3][6]]
-            [temp[3][0], temp[3][3], temp[3][6]] = [scramble[5][2], scramble[5][5], scramble[5][8]]
-            [temp[5][2], temp[5][5], temp[5][8]] = [scramble[1][2], scramble[1][5], scramble[1][8]]
+            [temp[0][2], temp[0][5], temp[0][8]] = [scramble[3][2], scramble[3][5], scramble[3][8]]
+            [temp[3][2], temp[3][5], temp[3][8]] = [scramble[5][6], scramble[5][3], scramble[5][0]]
+            [temp[5][6], temp[5][3], temp[5][0]] = [scramble[1][2], scramble[1][5], scramble[1][8]]
             [temp[1][2], temp[1][5], temp[1][8]] = finaltemp
+        
+        elif (notation == "d"):
+            finaltemp = [scramble[0][6], scramble[0][7], scramble[0][8]]
+            [temp[0][6], temp[0][7], temp[0][8]] = [scramble[4][6], scramble[4][7], scramble[4][8]]
+            [temp[4][6], temp[4][7], temp[4][8]] = [scramble[5][6], scramble[5][7], scramble[5][8]]
+            [temp[5][6], temp[5][7], temp[5][8]] = [scramble[2][6], scramble[2][7], scramble[2][8]]
+            [temp[2][6], temp[2][7], temp[2][8]] = finaltemp
+        
+        elif (notation == "l"):
+            finaltemp = [scramble[0][0], scramble[0][3], scramble[0][6]]
+            [temp[0][0], temp[0][3], temp[0][6]] = [scramble[1][0], scramble[1][3], scramble[1][6]]
+            [temp[1][0], temp[1][3], temp[1][6]] = [scramble[5][8], scramble[5][5], scramble[5][2]]
+            [temp[5][8], temp[5][5], temp[5][2]] = [scramble[3][0], scramble[3][3], scramble[3][6]]
+            [temp[3][0], temp[3][3], temp[3][6]] = finaltemp
+        
+        elif (notation == "b"):
+            finaltemp = [scramble[1][0], scramble[1][3], scramble[1][6]]
+            [temp[1][0], temp[1][3], temp[1][6]] = [scramble[2][2], scramble[2][5], scramble[2][8]]
+            [temp[2][2], temp[2][5], temp[2][8]] = [scramble[3][8], scramble[3][7], scramble[3][6]]
+            [temp[3][8], temp[3][7], temp[3][6]] = [scramble[4][6], scramble[4][3], scramble[4][0]]
+            [temp[4][6], temp[4][3], temp[4][0]] = finaltemp
         return temp
 
 

@@ -31,7 +31,7 @@ userscramble = [
      5, 5, 5] #Yellow
 ]
 
-userscramble = movements.debugmode(userscramble, 1)
+#userscramble = movements.debugmode(userscramble, 1)
 
 userscramble = movements.applySolve(userturns, userscramble)
 
