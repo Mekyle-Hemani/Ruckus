@@ -2,9 +2,10 @@ import grabScramble
 import displayCube
 import movements
 import findPiece
+import solve
 
 #userturns = grabScramble.grabscramble()
-userturns = ["u"]
+userturns = ["u", "r", "u'", "b"]
 
 userscramble = [
     [0, 0, 0,
@@ -32,12 +33,13 @@ userscramble = [
      5, 5, 5] #Yellow
 ]
 
+'''
 print(findPiece.find(0, 2, userscramble, 3))
 
-exit()
-
-userscramble = movements.debugmode(userscramble, 1)
+userscramble = movements.debugmode(userscramble, 1)'''
 
 userscramble = movements.applySolve(userturns, userscramble)
 
 displayCube.displayCube(userscramble)
+
+solve.solve(userscramble)
