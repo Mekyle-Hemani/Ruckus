@@ -51,7 +51,6 @@ def displayCube(colorsinput, delay=0):
                 draw_square(i + 6, j + 3, colors[5][i * 3 + j], size)
 
     def on_click(event):
-        # The code for changing color is removed to prevent color change on click.
         pass
 
     def on_done():

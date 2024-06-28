@@ -1,6 +1,7 @@
 import grabScramble
 import displayCube
 import movements
+import findPiece
 
 #userturns = grabScramble.grabscramble()
 userturns = ["f", "r", "u"]
@@ -30,6 +31,8 @@ userscramble = [
      5, 5, 5,
      5, 5, 5] #Yellow
 ]
+
+print(findPiece.find(0, 0, userscramble))
 
 #userscramble = movements.debugmode(userscramble, 1)
 
