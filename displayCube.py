@@ -4,7 +4,7 @@ import time
 
 def displayCube(colorsinput, delay=0):
 
-    color_options = ["white", "red", "green", "orange", "blue", "yellow", "black"]
+    color_options = ["white", "orange", "green", "red", "blue", "yellow", "black"]
     colors = colorsinput
 
     if isinstance(colors[0][0], int):
@@ -73,7 +73,8 @@ def displayCube(colorsinput, delay=0):
 
     root.mainloop()
 
-    colours = ["white", "red", "green", "orange", "blue", "yellow", "black"]
+    #colours = ["white", "red", "green", "orange", "blue", "yellow", "black"]
+    colours = ["white", "orange", "green", "red", "blue", "yellow", "black"]
 
     numberedscramble = scramble_result
 
@@ -92,7 +93,7 @@ if __name__ == "__main__":
      
     [1, 1, 1,
      1, 1, 1,
-     1, 1, 1], #Red
+     1, 1, 1], #Orange
 
     [2, 2, 2,
      2, 2, 2,
@@ -100,7 +101,7 @@ if __name__ == "__main__":
 
     [3, 3, 3,
      3, 3, 3,
-     3, 3, 3], #Orange
+     3, 3, 3], #Red
 
     [4, 4, 4,
      4, 4, 4,
