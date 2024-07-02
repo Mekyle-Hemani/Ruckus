@@ -5,7 +5,7 @@ import findPiece
 import solve
 
 #userturns = grabScramble.grabscramble()
-userturns = ["u", "r", "u'", "b"]
+userturns = ["f", "r", "u"]
 
 userscramble = [
     [0, 0, 0,

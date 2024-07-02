@@ -31,7 +31,7 @@ def find(type, colour, scramble, secondarycolour=None, tertiarycolour=None, conf
 
 
  
-def findsecondarycolor(type, colour, face, scramble, confirm=0):
+def findsecondarycolor(type, result, scramble):
     locations = []
     neighbouring = [
         [3, 4, 2, 1], #White
@@ -41,19 +41,6 @@ def findsecondarycolor(type, colour, face, scramble, confirm=0):
         [3, 5, 0, 1], #Blue
         [3, 2, 4, 1] #Yellow
     ]
-    for i in range(6):
-        for j in range(9):
-            if (scramble[i][j] == colour):
-                if ((type == 0)and(j%2 == 1)): #Edge
-                    locations.append([i, len(locations)])
-
-                    if (i == face):
-                        pass
-    print(locations)
-
-    if (confirm == 1):
-        if (len(locations)>4):
-            print(f"Too many matches in cube for type={type}, color={colour}, secondarycolour={face}")
-            return 0
-    elif (confirm == 0):
-        return locations
+    if type == 0:
+        print(neighbouring[result[0]][result[1]]) #This finds the neighbouring edge
+        #Needs to check if its face of the neighbouring edge is yellow

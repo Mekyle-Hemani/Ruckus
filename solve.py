@@ -21,7 +21,8 @@ def cross(type, colour, gotscramble):
     else:
         for i in range(len(solvingfor)):
             #If its secondary colour is connected to yellow
-            findPiece.findsecondarycolor(0, 0, 3, scramble)
+            print(solvingfor)
+            findPiece.findsecondarycolor(0, solvingfor[i], gotscramble)
 
 
 def solve(scramble):
