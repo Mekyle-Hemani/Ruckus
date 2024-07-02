@@ -5,7 +5,7 @@ import findPiece
 import solve
 
 #userturns = grabScramble.grabscramble()
-userturns = ["f", "r", "u"]
+userturns = ["r", "u"]
 
 userscramble = [
     [0, 0, 0,
@@ -39,6 +39,8 @@ print(findPiece.find(0, 2, userscramble, 3))
 userscramble = movements.debugmode(userscramble, 1)'''
 
 userscramble = movements.applySolve(userturns, userscramble)
+
+#print(findPiece.findsecondarycolor(0, [3, 0], userscramble))
 
 displayCube.displayCube(userscramble)
 

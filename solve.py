@@ -21,8 +21,9 @@ def cross(type, colour, gotscramble):
     else:
         for i in range(len(solvingfor)):
             #If its secondary colour is connected to yellow
-            print(solvingfor)
-            findPiece.findsecondarycolor(0, solvingfor[i], gotscramble)
+            if (findPiece.findsecondaryface(0, solvingfor[i], 5) == True):
+                #Run rotation algorithm
+                pass
 
 
 def solve(scramble):
