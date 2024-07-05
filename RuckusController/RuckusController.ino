@@ -9,6 +9,7 @@ void loop() {
     String data = Serial.readString();
     if (data.indexOf("hi") >= 0) {
       digitalWrite(LED_BUILTIN, HIGH);
+    }
     Serial.println("Received: " + data);
   }
 }
