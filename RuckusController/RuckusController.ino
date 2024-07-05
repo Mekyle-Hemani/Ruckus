@@ -1,15 +1,15 @@
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);
   Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+  digitalWrite(13, LOW);
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    String data = Serial.readString();
-    if (data.indexOf("hi") >= 0) {
-      digitalWrite(LED_BUILTIN, HIGH);
+     String data = Serial.readString();
+    if (data == "hi"){
+      digitalWrite(13, HIGH);
     }
-    Serial.println("Received: " + data);
   }
 }
