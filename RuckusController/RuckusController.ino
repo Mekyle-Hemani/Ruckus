@@ -1,18 +1,17 @@
-const int ledPin = 12;  // LED connected to digital pin 12
-
+const int ledPin = 12;
 void setup() {
-  Serial.begin(9600);  // Start serial communication at 9600 baud
-  pinMode(ledPin, OUTPUT);  // Set LED pin as output
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
   if (Serial.available()) {
-    String message = Serial.readStringUntil('\n');  // Read the incoming message
+    String message = Serial.readStringUntil('\n');
 
     if (message.indexOf("moveset") >= 0) {
-      digitalWrite(ledPin, HIGH);  // Turn on the LED
+      digitalWrite(ledPin, HIGH);
     } else {
-      digitalWrite(ledPin, LOW);  // Turn off the LED
+      digitalWrite(ledPin, LOW);
     }
   }
 }
