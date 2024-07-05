@@ -1,5 +1,5 @@
-const int dirPin = 8;
-const int stepPin = 7;
+const int dirPin = 4;
+const int stepPin = 3;
 const int stepsPerRevolution = 200;
 
 void setup()
