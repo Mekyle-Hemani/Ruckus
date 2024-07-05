@@ -1,7 +1,8 @@
 import serial
 import serial.tools.list_ports
+import time
 
-def senddata(data, rate=9600, debug=1):
+def senddata(data, rate=9600, debug=0):
     ports = serial.tools.list_ports.comports()
     comports = [port.device for port in ports]
 
@@ -13,10 +14,12 @@ def senddata(data, rate=9600, debug=1):
     port = comports[0]
     try:
         ser = serial.Serial(port, baudrate=rate, timeout=1)
+        time.sleep(2)
+
         if debug == 1:
             print(f"Connected to {port}")
 
-        ser.write(f"{data}\n".encode('utf-8'))
+        ser.write(("moveset "+data).encode('utf-8'))
 
         if debug == 1:
             print(f"Sent '{data}' successfully")
