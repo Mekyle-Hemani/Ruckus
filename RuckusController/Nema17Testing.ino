@@ -1,34 +1,29 @@
-const int dirPin = 4;
-const int stepPin = 3;
-const int stepsPerRevolution = 200;
-
-void setup()
-{
-  pinMode(stepPin, OUTPUT);
-  pinMode(dirPin, OUTPUT);
+const int stepPin = 3; 
+const int dirPin = 4; 
+ 
+void setup() {
+  // Sets the two pins as Outputs
+  pinMode(stepPin,OUTPUT); 
+  pinMode(dirPin,OUTPUT);
 }
-void loop()
-{
-  digitalWrite(dirPin, HIGH);
-
-  for(int x = 0; x < stepsPerRevolution; x++)
-  {
-    digitalWrite(stepPin, HIGH);
+void loop() {
+  digitalWrite(dirPin,HIGH); // Enables the motor to move in a particular direction
+  // Makes 200 pulses for making one full cycle rotation
+  for(int x = 0; x < 200; x++) {
+    digitalWrite(stepPin,HIGH); 
+    delayMicroseconds(500); 
+    digitalWrite(stepPin,LOW); 
+    delayMicroseconds(500); 
+  }
+  delay(1000); // One second delay
+  
+  digitalWrite(dirPin,LOW); //Changes the rotations direction
+  // Makes 400 pulses for making two full cycle rotation
+  for(int x = 0; x < 400; x++) {
+    digitalWrite(stepPin,HIGH);
     delayMicroseconds(500);
-    digitalWrite(stepPin, LOW);
+    digitalWrite(stepPin,LOW);
     delayMicroseconds(500);
   }
-  delay(500);
-
-  spin(200, 1, 400); 
-}
-
-void spin(int count, int dir, int del){
-  digitalWrite(dirPin, dir);
-  for (int i=0; i<count; i++){
-    digitalWrite(stepPin, HIGH);
-    delayMicroseconds(del);
-    digitalWrite(stepPin, LOW);
-    delayMicroseconds(del);
-  }
+  delay(1000);
 }
