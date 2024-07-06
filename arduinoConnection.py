@@ -19,7 +19,7 @@ def senddata(data, rate=9600, debug=0):
         if debug == 1:
             print(f"Connected to {port}")
 
-        ser.write(("moveset "+data).encode('utf-8'))
+        ser.write(data.encode('utf-8'))
 
         if debug == 1:
             print(f"Sent '{data}' successfully")
@@ -40,4 +40,4 @@ def senddata(data, rate=9600, debug=0):
             ser.close()
 
 if __name__ == "__main__":
-    print(senddata("hi", 9600))
+    print(senddata("123456", 9600))
