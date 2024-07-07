@@ -40,4 +40,4 @@ def senddata(data, rate=9600, debug=0):
             ser.close()
 
 if __name__ == "__main__":
-    print(senddata("123456", 9600))
+    print(senddata("fru", 9600))

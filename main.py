@@ -44,4 +44,4 @@ userscramble = movements.applySolve(userturns, userscramble)
 
 displayCube.displayCube(userscramble)
 
-solve.solve(userscramble)
+print(solve.solve(userscramble))
