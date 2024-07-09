@@ -1,61 +1,41 @@
-const int stepPin = 3; 
-const int dirPin = 4; 
+const int stepPinF = 3; 
+const int dirPinF = 4; 
+
+const int stepPinR = 5;
+const int dirPinR = 6;
  
 void setup() {
   // Sets the two pins as Outputs
-  pinMode(stepPin,OUTPUT); 
-  pinMode(dirPin,OUTPUT);
+  pinMode(stepPinF,OUTPUT); 
+  pinMode(dirPinF,OUTPUT);
+
+  pinMode(stepPinR,OUTPUT); 
+  pinMode(dirPinR,OUTPUT);
 }
 void loop() {
-  digitalWrite(dirPin,HIGH); // Enables the motor to move in a particular direction
+  digitalWrite(dirPinF,HIGH); // Enables the motor to move in a particular direction
+  digitalWrite(dirPinR,HIGH);
   // Makes 200 pulses for making one full cycle rotation
   for(int x = 0; x < 200; x++) {
-    digitalWrite(stepPin,HIGH); 
+    digitalWrite(stepPinF,HIGH); 
+    digitalWrite(stepPinR,HIGH); 
     delayMicroseconds(500); 
-    digitalWrite(stepPin,LOW); 
+    digitalWrite(stepPinF,LOW);
+    digitalWrite(stepPinR,LOW);
     delayMicroseconds(500); 
   }
   delay(1000); // One second delay
   
-  digitalWrite(dirPin,LOW); //Changes the rotations direction
+  digitalWrite(dirPinF,LOW); //Changes the rotations direction
+  digitalWrite(dirPinR,LOW);
   // Makes 400 pulses for making two full cycle rotation
   for(int x = 0; x < 400; x++) {
-    digitalWrite(stepPin,HIGH);
+    digitalWrite(stepPinF,HIGH);
+    digitalWrite(stepPinR,HIGH);
     delayMicroseconds(500);
-    digitalWrite(stepPin,LOW);
+    digitalWrite(dirPinF,LOW);
+    digitalWrite(dirPinR,LOW);
     delayMicroseconds(500);
   }
   delay(1000);
 }
-
-/*
-const int stepPin = 3; 
-const int dirPin = 4; 
-
-void setup() {
-  // Sets the two pins as Outputs
-  pinMode(stepPin,OUTPUT); 
-  pinMode(dirPin,OUTPUT);
-}
-void loop() {
-  digitalWrite(dirPin,HIGH); // Enables the motor to move in a particular direction
-  // Makes 200 pulses for making one full cycle rotation
-  for(int x = 0; x < 200; x++) {
-    digitalWrite(stepPin,HIGH); 
-    delayMicroseconds(2000); // Increased delay for slower movement
-    digitalWrite(stepPin,LOW); 
-    delayMicroseconds(2000); // Increased delay for slower movement
-  }
-  delay(1000); // One second delay
-  
-  digitalWrite(dirPin,LOW); //Changes the rotations direction
-  // Makes 400 pulses for making two full cycle rotation
-  for(int x = 0; x < 400; x++) {
-    digitalWrite(stepPin,HIGH);
-    delayMicroseconds(2000); // Increased delay for slower movement
-    digitalWrite(stepPin,LOW);
-    delayMicroseconds(2000); // Increased delay for slower movement
-  }
-  delay(1000);
-}
-*/
