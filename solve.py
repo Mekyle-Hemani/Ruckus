@@ -22,18 +22,20 @@ def cross(gotscramble):
     locations = []
 
     for i in range(6):
-        print(i)
         for j in range(9):
             if (((gotscramble[i][j] == 0)and(j%2 == 1))and(i!=0)):
                 locations.append([i, j])
                 send = int((j-1)/2)
 
+                print(locations)
+
                 if (findPiece.findsecondaryface(0, [i, send]) == 0): #This checks if the secondary colour has its edge on the white face
 
                     if (findPiece.grabindex(neighbouring[0], i) == 0): #This checks if the piece's edge is connected to white
 
-                        #Rotate its face clockwise, rotate white clockwise, rotate its secondary face counter clockwise, rotate white counter clockwise
-                        moves.append(notation[i])
+                        #Rotate its face counter clockwise, rotate white clockwise, rotate its secondary face counter clockwise, rotate white counter clockwise
+                        moves.append(notation[i]+"'")
+
                         if (send == 3):
                             send=2
                         elif (send == 2):
@@ -47,12 +49,18 @@ def cross(gotscramble):
                         moves.append("f'")
 
                         moves.append("piece solved")
+                
+                        #scramble = movements.applySolve(moves, scramble)
 
-                scramble = movements.applySolve(moves, scramble)
+                        #displayCube.displayCube(scramble)
 
-                for i in range(len(moves)):
-                    movestotal.append(moves[i])
-                moves = ["f", "f'"]
+                        print(moves)
+
+                        exit()
+
+                        for k in range(len(moves)):
+                            movestotal.append(moves[k])
+                        moves = ["f", "f'"]
     return movestotal
 
 
