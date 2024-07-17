@@ -38,6 +38,6 @@ def senddata(data, rate=9600, debug=0):
     finally:
         if ser.is_open:
             ser.close()
-
+ 
 if __name__ == "__main__":
-    print(senddata("fru", 9600))
+    print(senddata("123456", 9600))
