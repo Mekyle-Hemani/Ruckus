@@ -1,6 +1,7 @@
 {
     "port": "COM4",
-    "board": "arduino:avr:uno",
+    "board": "esp32:esp32:esp32doit-devkit-v1",
     "programmer": "avrisp",
-    "sketch": "RuckusController\\RuckusController.ino"
+    "sketch": "RuckusController\\RuckusController.ino",
+    "configuration": "FlashFreq=80,UploadSpeed=921600,DebugLevel=none,EraseFlash=none"
 }

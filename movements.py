@@ -54,7 +54,7 @@ def turn(notation, scramble):
             [temp[1][2], temp[1][1], temp[1][0]] = [temp[2][0], temp[2][3], temp[2][6]]
             [temp[2][0], temp[2][3], temp[2][6]] = finaltemp
             temp[0] = rotatefaceclockwise(scramble[0])
-
+        
         elif (notation == "b"):
             finaltemp = [temp[3][0], temp[3][1], temp[3][2]]
             [temp[3][0], temp[3][1], temp[3][2]] = [temp[2][8], temp[2][5], temp[2][2]]
@@ -105,4 +105,19 @@ def rotatefaceclockwise(face):
     return tempface
 
 if __name__ == "__main__":
-    pass
+    import displayCube
+
+    scramble = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [3, 3, 3, 3, 3, 3, 3, 3, 3],
+    [4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [5, 5, 5, 5, 5, 5, 5, 5, 5]
+]
+
+    notations = ["b"]
+    for i in range(len(notations)):
+        scramble = turn(notations[i], scramble)
+    print(scramble)
+    displayCube.displayCube(scramble)
