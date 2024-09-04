@@ -17,11 +17,16 @@ def turn(notation, scramble):
 
         if (notation == "r"):
             finaltemp = [temp[0][2], temp[0][5], temp[0][8]]
-            [temp[0][2], temp[0][5], temp[0][8]] = [temp[1][2], temp[1][5], temp[1][8]]
-            [temp[1][2], temp[1][5], temp[1][8]] = [temp[5][6], temp[5][3], temp[5][0]]
-            [temp[5][6], temp[5][3], temp[5][0]] = [temp[3][2], temp[3][5], temp[3][8]]
-            [temp[3][2], temp[3][5], temp[3][8]] = finaltemp
+            [temp[5][6], temp[5][3], temp[3][0]] = [temp[0][2], temp[0][5], temp[0][8]]
+            [temp[3][2], temp[3][5], temp[3][8]] = [temp[5][6], temp[5][3], temp[5][0]]
+            [temp[0][2], temp[0][5], temp[0][8]] = [temp[3][2], temp[3][5], temp[3][8]]
+            [temp[1][6], temp[1][3], temp[1][0]] = finaltemp
             temp[2] = rotatefaceclockwise(scramble[2])
+
+
+
+
+
 
         elif (notation == "l"):
             finaltemp = [temp[0][0], temp[0][3], temp[0][6]]
