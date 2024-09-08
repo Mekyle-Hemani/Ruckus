@@ -88,3 +88,32 @@ def fakemoveclockwise(piece):
         return 2
     elif piece == 2:
         return 3
+    
+def inversenotation(notation):
+    if len(notation) == 2:
+        notationsplit = list(notation)
+        if notationsplit[1] == "'":
+            return notationsplit[0]
+        elif notationsplit[1] == "2":
+            return notation
+    else:
+        return notation+"'"
+    
+def algorithmrefine(notations):
+    lastitem = "pass"
+    removes = []
+    for i in range(len(notations)):
+        if lastitem == inversenotation(notations[i]):
+            removes.append(i-1)
+            removes.append(i)
+            i+=1
+        lastitem = notations[i]
+
+    returnlist = []
+
+    for i in range(len(notations)):
+        if i in removes:
+            pass
+        else:
+            returnlist.append(notations[i])
+    return returnlist
