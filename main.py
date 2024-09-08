@@ -3,6 +3,7 @@ import displayCube
 import movements
 import findPiece
 import solve
+import colourprint
 
 #userturns = grabScramble.grabscramble()
 userturns = ["f", "r", "u", "r'"]
@@ -44,4 +45,4 @@ userscramble = movements.applySolve(userturns, userscramble)
 
 displayCube.displayCube(userscramble)
 
-print(solve.solve(userscramble))
+colourprint.print_colored(solve.solve(userscramble), colourprint.GREEN)

@@ -66,3 +66,13 @@ def findsecondarycolor(type, location, scramble):
 
     if (type == 0):
         return scramble[neighbouring[location[0]][location[1]]][(grabindex((neighbouring[(neighbouring[location[0]][location[1]])]), location[0]))]
+    
+def fakemovecounterclockwise(piece):
+    if piece == 3:
+        return 2
+    elif piece == 2:
+        return 0
+    elif piece == 0:
+        return 1
+    elif piece == 1:
+        return 3
