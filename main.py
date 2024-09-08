@@ -1,7 +1,7 @@
 import grabScramble
 import displayCube
 import movements
-import findPiece
+import pieceFunctions
 import solve
 import colourprint
 
@@ -35,13 +35,13 @@ userscramble = [
 ]
 
 '''
-print(findPiece.find(0, 2, userscramble, 3))
+print(pieceFunctions.find(0, 2, userscramble, 3))
 
 userscramble = movements.debugmode(userscramble, 1)'''
 
 userscramble = movements.applySolve(userturns, userscramble)
 
-#print(findPiece.findsecondarycolor(0, [3, 0], userscramble))
+#print(pieceFunctions.findsecondarycolor(0, [3, 0], userscramble))
 
 displayCube.displayCube(userscramble)
 

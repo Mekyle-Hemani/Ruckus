@@ -1,4 +1,4 @@
-import findPiece
+import pieceFunctions
 import movements
 import displayCube
 import colourprint
@@ -28,7 +28,7 @@ def cross(gotscramble):
                 locations.append([i, j])
                 listconverted = int((j-1)/2)
 
-                if findPiece.findsecondaryface(0, [i, listconverted], 0) == True:
+                if pieceFunctions.findsecondaryface(0, [i, listconverted], 0) == True:
                     #Case 1, edge is flipped on white
                     colourprint.print_colored("Case 1, edge is flipped on white", colourprint.YELLOW)
 
@@ -39,7 +39,7 @@ def cross(gotscramble):
                     moves.append("f")
 
                     #Rotate the secondary face of the edge after the first move counter-clockwise
-                    moves.append((notation[findPiece.findsecondaryface(0, ([i, findPiece.fakemovecounterclockwise(listconverted)]))])+"'")
+                    moves.append((notation[pieceFunctions.findsecondaryface(0, ([i, pieceFunctions.fakemovecounterclockwise(listconverted)]))])+"'")
 
                     #Rotate F counter-clockwise
                     moves.append("f'")
@@ -50,7 +50,7 @@ def cross(gotscramble):
                     #Case 2, edge is on yellow
                     colourprint.print_colored("Case 2, edge is on yellow", colourprint.YELLOW)
 
-                elif (findPiece.findsecondaryface(0, [i, listconverted]) == 5):
+                elif (pieceFunctions.findsecondaryface(0, [i, listconverted]) == 5):
                     #Case 3, edge is flipped on yellow
                     colourprint.print_colored("Case 3, edge is flipped on yellow", colourprint.YELLOW)
 
@@ -58,7 +58,7 @@ def cross(gotscramble):
                     #Case 4, edge is on middle row
                     colourprint.print_colored("Case 4, edge is on middle row", colourprint.YELLOW)
 
-                    if scramble[0][findPiece.grabindex(neighbouring[0], findPiece.findsecondaryface(0, [i, listconverted]))] != 0:
+                    if scramble[0][pieceFunctions.grabindex(neighbouring[0], pieceFunctions.findsecondaryface(0, [i, listconverted]))] != 0:
                         #Rotate that face
                         pass
                     else:
