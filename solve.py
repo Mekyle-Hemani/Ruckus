@@ -5,7 +5,7 @@ import colourprint
 
 def cross(gotscramble):
     scramble = gotscramble
-    moves = ["f", "f'"]
+    moves = []
 
     colors = ["w", "o", "g", "r", "b", "y"]
     notation = ["f", "d", "r", "u", "l", "b"]
@@ -64,6 +64,8 @@ def cross(gotscramble):
                         locations.remove([i,j])
 
                         colourprint.print_colored(f"Piece [{i, j}] was solved using case 1", colourprint.BLUE)
+                        print(totalmoves)
+                        quit()
 
                     elif i == 5:
                         #Case 2, edge is on yellow
@@ -71,8 +73,10 @@ def cross(gotscramble):
 
                         partsolved = 0
 
-                        if (j == 1) or (j == 7):
-                            comparing = j
+                        if j == 1:
+                            comparing = 1
+                        elif j == 7:
+                            comparing = 7
                         elif j == 3:
                             comparing = 5
                         elif j == 5:
@@ -117,4 +121,5 @@ def cross(gotscramble):
 def solve(scramble):
     #Solve for white cross
     turns = (cross(scramble))
-    return pieceFunctions.algorithmrefine(turns) #Refines any redundancy to send off to the arduino
+    #return pieceFunctions.algorithmrefine(turns) #Refines any redundancy to send off to the arduino
+    return turns #Refines any redundancy to send off to the arduino
