@@ -1,4 +1,5 @@
 import colourprint
+import pieceFunctions
 
 def applySolve(moveset, scramblearray):
     currentscramble = scramblearray
@@ -9,8 +10,12 @@ def applySolve(moveset, scramblearray):
 def turn(notation, scramble):
     if len(notation) == 2:
         editscramble = scramble
-        for i in range(3):
-            editscramble = turn(notation[0], scramble) #Needs to be set to a variable
+        if len(pieceFunctions.inversenotation(notation)) == 2:
+            for i in range(2):
+                editscramble = turn(notation[0], scramble) #Needs to be set to a variable
+        else:
+            for i in range(3):
+                editscramble = turn(notation[0], scramble) #Needs to be set to a variable
         return editscramble
     else:
         colours = ["w", "o", "g", "r", "b", "y"]
@@ -55,6 +60,7 @@ def turn(notation, scramble):
             [temp[1][6], temp[1][7], temp[1][8]] = [temp[2][0], temp[2][3], temp[2][6]]
             [temp[2][0], temp[2][3], temp[2][6]] = [temp[3][6], temp[3][7], temp[3][8]]
             [temp[3][6], temp[3][7], temp[3][8]] = finaltemp
+            temp[0] = rotatefaceclockwise(scramble[0])
         
         elif (notation == "b"):
             finaltemp = [temp[3][0], temp[3][1], temp[3][2]]

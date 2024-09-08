@@ -61,7 +61,6 @@ def cross(gotscramble):
                         scramble = movements.applySolve(moves, scramble)
                         edgessolved += 1
                         moves = []
-
                         locations.remove([i,j])
 
                         colourprint.print_colored(f"Piece [{i, j}] was solved using case 1", colourprint.BLUE)
@@ -69,6 +68,32 @@ def cross(gotscramble):
                     elif i == 5:
                         #Case 2, edge is on yellow
                         colourprint.print_colored("Case 2, edge is on yellow", colourprint.YELLOW)
+
+                        partsolved = 0
+
+                        if (j == 1) or (j == 7):
+                            comparing = j
+                        elif j == 3:
+                            comparing = 5
+                        elif j == 5:
+                            comparing = 3
+                        
+                        while partsolved != 1:
+                            if scramble[0][comparing] == 0:
+                                moves.append("f")
+                                totalmoves+=moves
+                                scramble = movements.applySolve(moves, scramble)
+                                moves = []
+                            else:
+                                moves.append(notation[pieceFunctions.findsecondaryface(0, [i, listconverted])]+"2")
+                                totalmoves+=moves
+                                scramble = movements.applySolve(moves, scramble)
+                                edgessolved += 1
+                                moves = []
+                                partsolved = 1
+                                locations.remove([i,j])
+                        
+                        colourprint.print_colored(f"Piece [{i, j}] was solved using case 2", colourprint.BLUE)
 
                     elif (pieceFunctions.findsecondaryface(0, [i, listconverted]) == 5):
                         #Case 3, edge is flipped on yellow

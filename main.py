@@ -6,7 +6,7 @@ import solve
 import colourprint
 
 #userturns = grabScramble.grabscramble()
-userturns = ["f", "r", "u", "r'"]
+userturns = ["r2", "f"]
 
 userscramble = [
     [0, 0, 0,
@@ -33,15 +33,7 @@ userscramble = [
      5, 5, 5,
      5, 5, 5] #Yellow
 ]
-
-'''
-print(pieceFunctions.find(0, 2, userscramble, 3))
-
-userscramble = movements.debugmode(userscramble, 1)'''
-
 userscramble = movements.applySolve(userturns, userscramble)
-
-#print(pieceFunctions.findsecondarycolor(0, [3, 0], userscramble))
 
 displayCube.displayCube(userscramble)
 
