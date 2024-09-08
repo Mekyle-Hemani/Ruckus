@@ -1,3 +1,5 @@
+import colourprint
+
 def find(type, colour, scramble, secondarycolour=None, tertiarycolour=None, confirm=0):
     locations = []
     neighbouring = [
@@ -24,7 +26,7 @@ def find(type, colour, scramble, secondarycolour=None, tertiarycolour=None, conf
 
     if (confirm == 1):
         if (len(locations)>4):
-            print(f"Too many matches in cube for type={type}, color={colour}, secondarycolour={secondarycolour}, tertiarycolour={tertiarycolour}")
+            colourprint.print_colored(f"Too many matches in cube for type={type}, color={colour}, secondarycolour={secondarycolour}, tertiarycolour={tertiarycolour}", colourprint.RED)
             return 0
     elif (confirm == 0):
         return locations
@@ -75,4 +77,14 @@ def fakemovecounterclockwise(piece):
     elif piece == 0:
         return 1
     elif piece == 1:
+        return 3
+    
+def fakemoveclockwise(piece):
+    if piece == 3:
+        return 1
+    elif piece == 1:
+        return 0
+    elif piece == 0:
+        return 2
+    elif piece == 2:
         return 3

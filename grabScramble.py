@@ -1,4 +1,5 @@
 import tkinter as tk
+import colourprint
 
 def grabscramble():
     scramble_result = []

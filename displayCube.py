@@ -1,6 +1,7 @@
 import tkinter as tk
 import movements
 import time
+import colourprint
 
 def displayCube(colorsinput, delay=0):
 

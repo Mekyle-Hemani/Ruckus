@@ -1,3 +1,5 @@
+import colourprint
+
 def applySolve(moveset, scramblearray):
     currentscramble = scramblearray
     for i in range(len(moveset)):
@@ -112,11 +114,10 @@ if __name__ == "__main__":
     [2, 2, 2, 2, 2, 2, 2, 2, 2],
     [3, 3, 3, 3, 3, 3, 3, 3, 3],
     [4, 4, 4, 4, 4, 4, 4, 4, 4],
-    [5, 5, 5, 5, 5, 5, 5, 5, 5]
-]
+    [5, 5, 5, 5, 5, 5, 5, 5, 5]]
 
     notations = ["b"]
     for i in range(len(notations)):
         scramble = turn(notations[i], scramble)
-    print(scramble)
+    colourprint.print_colored(scramble, colourprint.ORANGE)
     displayCube.displayCube(scramble)
