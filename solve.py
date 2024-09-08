@@ -64,8 +64,6 @@ def cross(gotscramble):
                         locations.remove([i,j])
 
                         colourprint.print_colored(f"Piece [{i, j}] was solved using case 1", colourprint.BLUE)
-                        print(totalmoves)
-                        quit()
 
                     elif i == 5:
                         #Case 2, edge is on yellow

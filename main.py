@@ -6,7 +6,7 @@ import solve
 import colourprint
 
 #userturns = grabScramble.grabscramble()
-userturns = ["r", "r", "f", "f"]
+userturns = ["u", "r", "u"]
 
 userscramble = [
     [0, 0, 0,
