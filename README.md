@@ -22,6 +22,8 @@ git clone https://github.com/Mekyle-Hemani/ruckus.git
 2.  **Install SimpleSerial**:
 pip install SimpleSerial
 
+3.  **Upload /arduino/Ruckus/src/main.cpp to microcontroller**
+
 
 ## Usage
 
