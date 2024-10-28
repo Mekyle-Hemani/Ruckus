@@ -1,4 +1,3 @@
-import grabScramble
 import colourprint
 
 def fromCubestring(string):
