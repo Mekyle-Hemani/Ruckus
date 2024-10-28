@@ -23,7 +23,7 @@ colourprint.print_colored("Communication established", colourprint.BLUE)
 SimpleSerial.SimpleSerialMain.writeDataOnce(solution)
 
 while True:
-    if "testing" in (SimpleSerial.SimpleSerialMain.readDataOnce(debug=1)):
+    if "solved" in (SimpleSerial.SimpleSerialMain.readDataOnce(debug=1)):
         break
 
 colourprint.print_colored(("Cube solved using "+solution), colourprint.GREEN)
