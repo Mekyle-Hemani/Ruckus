@@ -3,8 +3,6 @@ import grabScramble
 import solve
 import SimpleSerial
 import colourprint
-import time
-import serial
 
 scramble = grabScramble.grabScramble()
 
