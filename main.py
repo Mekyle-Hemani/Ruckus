@@ -3,6 +3,8 @@ import grabScramble
 import solve
 import SimpleSerial
 import colourprint
+import time
+import serial
 
 scramble = grabScramble.grabScramble()
 
@@ -10,20 +12,14 @@ solution = solve.solve(scramble)
 
 colourprint.print_colored(solution, colourprint.GREEN)
 
-#Establishing communication with microcontroller
-while True:
-    if "testing" in (SimpleSerial.SimpleSerialMain.readDataOnce(debug=1)):
-        break
-while True:
-    SimpleSerial.SimpleSerialMain.writeDataOnce("sending")
-    if "recieved" in (SimpleSerial.SimpleSerialMain.readDataOnce(debug=1)):
-        break
-colourprint.print_colored("Communication established", colourprint.BLUE)
+colourprint.print_colored("Communication to microcontroller established", colourprint.BLUE)
 
-SimpleSerial.SimpleSerialMain.writeDataOnce(solution)
-
-while True:
-    if "solved" in (SimpleSerial.SimpleSerialMain.readDataOnce(debug=1)):
-        break
-
-colourprint.print_colored(("Cube solved using "+solution), colourprint.GREEN)
+ser = serial.Serial('COM4', 9600)
+data = "a"+solution
+try:
+    ser.write((data + "\n").encode())
+    time.sleep(1)
+except Exception as e:
+    print("Error sending data:", e)
+finally:
+    ser.close()
