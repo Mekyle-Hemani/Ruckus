@@ -107,7 +107,7 @@ def grabScramble():
                     button.config(command=lambda idx=index, btn=button: on_facelet_click(idx, btn))
                 button.grid(row=i+1, column=j, padx=1, pady=1)
 
-    solve_button = tk.Button(root, text="Solve Cube", command=solve_cube, bg='lightblue', font=('Arial', 12, 'bold'))
+    solve_button = tk.Button(root, text="Solve Cube", command=solve_cube, bg='grey', font=('Arial', 12, 'bold'))
     solve_button.grid(row=9, column=3, columnspan=6, pady=20)
     root.mainloop()
     
