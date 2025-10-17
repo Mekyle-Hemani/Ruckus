@@ -32,8 +32,6 @@ def visualizeCube(cubeArray):
 
     cubeArray[2]=spinArrayClockwise(cubeArray[2])
 
-    #cubeArray[3]=spinArrayClockwise(cubeArray[3])
-
     cubeArray[4]=spinArrayClockwise(cubeArray[4])
     cubeArray[4]=spinArrayClockwise(cubeArray[4])
     cubeArray[4]=spinArrayClockwise(cubeArray[4])
