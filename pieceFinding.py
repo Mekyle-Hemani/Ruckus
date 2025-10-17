@@ -53,8 +53,35 @@ def findCornerColour(facea, faceb, facec):
 
     return([aCornerLocation,bCornerLocation,cCornerLocation])
 
+def findCornerByColour(coloura, colourb, colourc, cubeArray=cubeStateManagement.resetCube()):
+    combinedColourGoal = [coloura, colourb, colourc]
+    for i in range(6):
+        for j in range(4):
+            indexToCorners = {0:0,
+                              1:2,
+                              2:6,
+                              3:8}
+            if cubeArray[i][indexToCorners[j]] == coloura:
+                corner = indexToCorners[j]
+                edges=None
+                if corner == 2:
+                    edges = [1,5]
+                if corner == 8:
+                    edges = [5,7]
+                if corner == 6:
+                    edges = [7,3]
+                if corner == 0:
+                    edges = [1,3]
+                faceb = neighbours[i][pieceToEdge[edges[0]]]
+                facec = neighbours[i][pieceToEdge[edges[1]]]
+
+                result = findCornerColour(i, faceb, facec)
+                colours = [cubeArray[i][result[0]],cubeArray[faceb][result[1]],cubeArray[facec][result[2]]]
+                if colours.sort() == combinedColourGoal.sort():
+                    return [[i,result[0]],[faceb,result[1]],[facec,result[2]]]
 
 if __name__ == "__main__":
     #print(findEdgeColour(5,5))
     #print(findEdgeByColor(5,3))
-    print(findCornerColour(0,1,4))
+    #print(findCornerColour(0,1,4))
+    print(findCornerByColour(0,1,2))
