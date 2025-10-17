@@ -6,7 +6,6 @@ def applyTransformations(moves=["f","r","u","r'","u'","f'"],cubeArray=None):
     for move in range(len(moves)):
         prime=("'" in moves[move])
         dual=("2" in moves[move])
-        print(dual)
 
         cubeArrayClone=[]
         import copy

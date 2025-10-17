@@ -25,7 +25,7 @@ def findEdgeByColor(coloura, colourb, cubeArray=cubeStateManagement.resetCube())
             if cubeArray[i][edgeToPiece[j]] == coloura:
                 coordinates = findEdgeColour(i, edgeToPiece[j])
                 if cubeArray[coordinates[0]][coordinates[1]] == colourb:
-                    return [coordinates[0],coordinates[1]],[i,edgeToPiece[j]]
+                    return [[coordinates[0],coordinates[1]],[i,edgeToPiece[j]]]
 
 def cornerLocation(edges):
     if edges == [1,5] or edges == [5,1]:
