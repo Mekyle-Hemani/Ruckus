@@ -27,8 +27,34 @@ def findEdgeByColor(coloura, colourb, cubeArray=cubeStateManagement.resetCube())
                 if cubeArray[coordinates[0]][coordinates[1]] == colourb:
                     return [coordinates[0],coordinates[1]],[i,edgeToPiece[j]]
 
-#def findCornerColour(face=0, piece=0):
+def cornerLocation(edges):
+    if edges == [1,5] or edges == [5,1]:
+        return 2
+    if edges == [5,7] or edges == [7,5]:
+        return 8
+    if edges == [7,3] or edges == [3,7]:
+        return 6
+    if edges == [3,1] or edges == [1,3]:
+        return 0
+
+def findCornerColour(facea, faceb, facec):
+    ab = edgeToPiece[neighbours[facea].index(faceb)]
+    ac = edgeToPiece[neighbours[facea].index(facec)]
+
+    ba = edgeToPiece[neighbours[faceb].index(facea)]
+    bc = edgeToPiece[neighbours[faceb].index(facec)]
+
+    ca = edgeToPiece[neighbours[facec].index(facea)]
+    cb = edgeToPiece[neighbours[facec].index(faceb)]
+
+    aCornerLocation = (cornerLocation([ab,ac]))
+    bCornerLocation = (cornerLocation([ba,bc]))
+    cCornerLocation = (cornerLocation([ca,cb]))
+
+    return([aCornerLocation,bCornerLocation,cCornerLocation])
+
 
 if __name__ == "__main__":
     #print(findEdgeColour(5,5))
-    print(findEdgeByColor(5,3))
+    #print(findEdgeByColor(5,3))
+    print(findCornerColour(0,1,4))
