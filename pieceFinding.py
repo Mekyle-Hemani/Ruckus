@@ -77,11 +77,13 @@ def findCornerByColour(coloura, colourb, colourc, cubeArray=cubeStateManagement.
 
                 result = findCornerColour(i, faceb, facec)
                 colours = [cubeArray[i][result[0]],cubeArray[faceb][result[1]],cubeArray[facec][result[2]]]
-                if colours.sort() == combinedColourGoal.sort():
+                if sorted(colours) == sorted(combinedColourGoal):
                     return [[i,result[0]],[faceb,result[1]],[facec,result[2]]]
-
+    print("No corner found with the supplied colours")
+    return None
+                
 if __name__ == "__main__":
     #print(findEdgeColour(5,5))
     #print(findEdgeByColor(5,3))
     #print(findCornerColour(0,1,4))
-    print(findCornerByColour(0,1,2))
+    print(findCornerByColour(0,1,5))
