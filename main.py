@@ -5,6 +5,6 @@ import visualizer
 cubeArray = []
 
 cubeArray=cubeStateManagement.resetCube()
-cubeArray=transformations.applyTransformations(["r2","u2"])
+cubeArray=transformations.applyTransformations()
 print(cubeArray)
 visualizer.visualizeCube(cubeArray)
